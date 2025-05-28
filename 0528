@@ -1,0 +1,19 @@
+#include <NewPing.h>
+
+#define TrigPin 2
+#define EchoPin 3
+#define MaxDistance 200
+
+
+NewPing sonar(2, 3, 200);
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  delay(50);          
+  Serial.print("Ping : ");
+  Serial.print(sonar.ping_cm());
+  Serial.println("cm");
+}
